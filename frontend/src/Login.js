@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-const App = () => {
+const Login = () => {
   return (<>
   <h1>로그인</h1>
      </>
@@ -9,4 +9,4 @@ const App = () => {
  
 }
 
-export default App;
+export default Login;
