@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Redirect, Route } from "react-router-dom"
+import { MemberDelete, MemberDetail, MemberList, MemberLogin, MemberModify, MemberRegister } from 'member'
+import { Home, Member} from 'templates'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  return (<div>
+    <Router>
+   
+        <Route exact path='/home' component={Home}/>
+        <Route exact path='/member-logout' component={Home}/>
+        <Redirect exact from={'/'} to={'/home'}/>
+        <Route exact path='/member' component={Member}/>
+        
+        <Route exact path='/member-login' component={MemberLogin}/>        
+       
+        
+    </Router>
+  </div>)
 }
 
-export default App;
+export default App
