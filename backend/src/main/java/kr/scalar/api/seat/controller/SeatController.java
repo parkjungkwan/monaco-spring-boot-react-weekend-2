@@ -22,7 +22,7 @@ public class SeatController {
     public List<Seat> findAll() {
         return seatService.findAll();
     }
-    @GetMapping("/{seatId}")
+    @GetMapping("/exists/{seatId}")
     public void existsById(@RequestParam long seatId) {
         seatService.existsById(seatId);
     }
@@ -30,7 +30,7 @@ public class SeatController {
     public int count() {
         return seatService.count();
     }
-    @GetMapping("/{seatId}")
+    @GetMapping("/find/{seatId}")
     public Optional<Seat> findById(@RequestParam long seatId) {
         return seatService.findById(seatId);
     }
