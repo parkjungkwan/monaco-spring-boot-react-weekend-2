@@ -1,55 +1,37 @@
 package kr.scalar.api.plex.service;
 
-import kr.scalar.api.plex.domain.PlexDto;
+import kr.scalar.api.plex.domain.Plex;
 import kr.scalar.api.plex.repository.PlexRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class PlexServiceImpl implements PlexService{
+    PlexRepository plexRepository;
 
-    private final PlexRepository plexRepository;
-
-    @Override
-    public int regPlex(PlexDto vo) {
-        return 0;
+    @Override public List<Plex> findAll(){
+        return plexRepository.findAll();
     }
-
-    @Override
-    public PlexDto selectByNo(int plexNo) {
-        return null;
+    @Override public void save(Plex plex){
+        plexRepository.save(plex);
     }
-
-    @Override
-    public PlexDto selectByName(String name) {
-        return null;
+    @Override public int count(){
+        return (int)plexRepository.count();
     }
-
-    @Override
-    public boolean isExist(int plexNo) {
-        return false;
+    @Override public void deleteById(long plexId){
+        plexRepository.deleteById(plexId);
     }
-
-    @Override
-    public boolean isExistName(String name) {
-        return false;
+    @Override public void existsById(long plexId){
+        plexRepository.existsById(plexId);
     }
-
-    @Override
-    public int delete(int plexNo) {
-        return 0;
+    @Override public Optional<Plex> findById(long plexId){
+        return plexRepository.findById(plexId);
     }
-
-    @Override
-    public ArrayList<PlexDto> selectAll() {
-        return null;
-    }
-
-    @Override
-    public int update(PlexDto vo) {
-        return 0;
+    @Override public Plex getById(long plexId){
+        return plexRepository.getById(plexId);
     }
 }
